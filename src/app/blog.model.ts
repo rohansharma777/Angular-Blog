@@ -5,9 +5,18 @@ export class Blog{
         public title: string,
         public content: string,
         public date?: Date,
-        public vote?: number
+        public votes?: number
     ){
-
+           
     }
     
+    like(){
+        this.votes += 1;
+    }
+    
+    dislike(){
+        this.votes -= 1
+        if(this.votes<0) this.votes=0;
+    }
+
 }

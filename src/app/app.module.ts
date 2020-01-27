@@ -20,9 +20,5 @@ import { ListviewComponent } from './listview/listview.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  @Input() form: any;
-  constructor(){
-    console.log("App component received: ", this.form);
-  }
- }
+export class AppModule { }
+

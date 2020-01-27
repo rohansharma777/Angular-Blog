@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Blog } from '../blog.model'
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-demo-form',
@@ -10,14 +10,18 @@ export class DemoFormComponent implements OnInit {
 
   constructor() { }
 
-  @Output() form = new EventEmitter<Blog>();
+  @Output() form = new EventEmitter<any>();
 
   ngOnInit() {
   }
   
-  onSubmit(form: Blog){
-    console.log("Demo component received: ", form.title);
+  onSubmit(form: any){
     this.form.emit(form);
+  }
+
+  clearIt(title: HTMLInputElement, content: HTMLInputElement){
+    title.value = "";
+    content.value = "";
   }
 
 }

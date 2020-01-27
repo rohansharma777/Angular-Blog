@@ -1,15 +1,15 @@
 <div class="container">
     <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
         <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" placeholder="Title of your blog" name="title" ngModel>
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" #title placeholder="Title of your blog" name="title" ngModel>
         </div>
         
         <div class="form-group">
         <label for="content">Write Here: </label>
-        <textarea class="form-control" id="content" rows="7" placeholder="What's on your mind?" name="content" ngModel></textarea>
+        <textarea class="form-control" id="content" rows="7" #content placeholder="What's on your mind?" name="content" style="white-space: pre-wrap;" ngModel></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Post It!</button>
+        <button type="submit" class="btn btn-primary" (click)="clearIt(title, content)">Post It!</button>
     </form>
 </div>    
     

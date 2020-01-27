@@ -7,7 +7,12 @@ import { Blog } from '../blog.model'
   styleUrls: ['./listview.component.css']
 })
 export class ListviewComponent {
-  // @Input() blog: Blog; 
-  
+  @Input() blogs: Blog[]; 
 
+  like(blog: Blog){
+    blog.like();
+  }
+  dislike(blog: Blog){
+    blog.dislike();
+  }
 }

@@ -8,19 +8,16 @@ import { Blog } from './blog.model'
 })
 export class AppComponent {
   
-    public form: Blog;
+    public form: any;
     public blogs: Blog[];
     
-
+  constructor(){
+    this.blogs = [];
+  }
   
 
   addBlog($event){
     this.form = $event;
     this.blogs.push(new Blog(this.form.title, this.form.content, new Date(), 0));
-
-    for(let blog of this.blogs){
-      console.log("The app component received blog with title: ", blog.title);
-      console.log("and content: ", blog.content);
-    }
   }
 }
